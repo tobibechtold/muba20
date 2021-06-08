@@ -1,15 +1,15 @@
 var express = require('express');
-var feed = require('rss-to-json');
-var moment = require('moment');
+var fs = require('fs');
 var app = express();
 var port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.get('/', (req, res) => {
-    feed.load('http://www.maclife.de/rss/news.xml', (err, rss) => {
-        var feedItems = rss;
-        res.render('index', {feedItems: feedItems.items, moment: moment});
+    fs.readFile('./public/content.json', 'utf8', (err, jsonString) => {
+        var json = jsonString;
+        var content = JSON.parse(json);
+        res.render('index', {content: content});
     });
 });
 

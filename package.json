@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Vanilla nodejs and express based rss feed reader",
   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
