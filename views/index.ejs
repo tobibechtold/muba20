@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <title> Express-rss-reader </title>
+    <link href="/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            Muba 2.0
+        </a>
+    </nav>
+</head>
+<body>
+    <div class="feed">
+        <% feedItems.forEach(feedItem => { %>
+            <div class="card article">
+                <img src="<%= feedItem.enclosures[0].url %>" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><%- feedItem.title %></h5>
+                    <p class="card-text"><%- feedItem.description %></p>
+                    <p class="card-text"><small class="text-muted"><%- moment(new Date(feedItem.created)).format('LLLL'); %></small></p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    <footer>
+        <div id="app-footer">
+            <a href="https://github.com/tobibechtold/muba20" target="_blank">
+                <img src="/github.png" title="View this project on github.com" alt="View this project on github.com">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
