@@ -4,8 +4,8 @@
   "description": "Vanilla nodejs and express based rss feed reader",
   "main": "index.js",
   "engines": {
-    "node": "16.2.0",
-    "npm": "7.13.0"
+    "node": "14.17.0",
+    "npm": "6.14.13"
   },
   "scripts": {
     "dev": "nodemon index.js",
