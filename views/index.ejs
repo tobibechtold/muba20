@@ -16,12 +16,8 @@
 <body>
 <div class="feed">
     <div class="card article">
+        <a href="https://youtube.com/watch?v=<%= content.code %>" target="_blank"><img src="/image003.png" class="card-img-top"></a>
         <div class="card-body">
-            <div class="youtube-container-100">
-                <iframe
-                        src="https://youtube.com/embed/<%= content.code %>?autoplay=1" allowfullscreen="allowfullscreen" allow="autoplay fullscreen" allowfullscreen>
-                </iframe>
-            </div>
             <h5 class="card-title"><%- content.title %></h5>
             <p class="card-text"><%- content.text %></p>
         </div>
